@@ -138,13 +138,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ==========================================================================
-       PRINT REPORT TO PDF
-       ========================================================================== */
-    const printBtn = document.getElementById('print-pdf-btn');
-    if (printBtn) {
-        printBtn.addEventListener('click', () => {
-            window.print();
-        });
-    }
+
 });

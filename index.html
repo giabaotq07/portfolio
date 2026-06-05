@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Portfolio | Lý Gia Bảo</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar no-print">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/><path d="M13 14h3"/></svg>
+                </div>
+                <span class="logo-text">DigitalPortfolio</span>
+            </div>
+            
+            <nav class="nav-menu">
+                <button class="nav-item active" data-tab="intro">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    <span>Giới thiệu</span>
+                </button>
+                <button class="nav-item" data-tab="projects">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    <span>Bài tập Dự án</span>
+                </button>
+                <button class="nav-item" data-tab="summary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <span>Tổng kết</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="theme-toggle" class="theme-btn" title="Chuyển chế độ Sáng/Tối">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                    <svg class="moon-icon hidden" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                    <span>Giao diện</span>
+                </button>
+                <div class="user-badge">
+                    <div class="badge-dot"></div>
+                    <span class="user-badge-name">Lý Gia Bảo</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- Floating Header for Mobile -->
+            <header class="mobile-header no-print">
+                <span class="logo-text">DigitalPortfolio</span>
+                <button id="mobile-menu-toggle" class="mobile-menu-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </header>
+
+            <!-- SECTION 1: TRANG GIỚI THIỆU -->
+            <section id="tab-intro" class="tab-panel active">
+                <div class="hero-card fade-in-up">
+                    <div class="hero-layout">
+                        <div class="hero-image-wrapper">
+                            <img src="assets/LyGiaBao.jpg" alt="Lý Gia Bảo" class="hero-avatar" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80'">
+                            <div class="avatar-glow"></div>
+                        </div>
+                        <div class="hero-info">
+                            <span class="hero-sub">Chào mừng bạn đến với Portfolio của tôi</span>
+                            <h1 class="hero-name">Lý Gia Bảo</h1>
+                            <p class="hero-bio">Sinh viên chuyên ngành Công nghệ thông tin & Truyền thông số. Đam mê ứng dụng các giải pháp kỹ thuật số sáng tạo và khai thác sức mạnh của Trí tuệ nhân tạo (AI) để nâng cao hiệu suất học tập và làm việc.</p>
+                            <div class="hero-tags">
+                                <span class="tag">#DigitalTechnology</span>
+                                <span class="tag">#GenerativeAI</span>
+                                <span class="tag">#Productivity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-2 mt-4">
+                    <!-- Mục tiêu học tập -->
+                    <div class="glass-card card-gradient-1 fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                        </div>
+                        <h3 class="card-title">Mục tiêu Học tập & Phát triển</h3>
+                        <ul class="styled-list">
+                            <li>
+                                <strong>Làm chủ công nghệ:</strong> Nắm vững các khái niệm cơ bản về phần cứng, quản lý tệp tin và các công cụ cộng tác trực tuyến.
+                            </li>
+                            <li>
+                                <strong>Khai thác AI hiệu quả:</strong> Ứng dụng thành thạo kỹ thuật đặt câu lệnh (Prompt Engineering) phục vụ nghiên cứu khoa học.
+                            </li>
+                            <li>
+                                <strong>Học tập suốt đời:</strong> Phát triển tư duy phản biện khi tiếp cận thông tin số và tuân thủ liêm chính học thuật.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Mục tiêu Portfolio -->
+                    <div class="glass-card card-gradient-2 fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        </div>
+                        <h3 class="card-title">Mục tiêu của Portfolio này</h3>
+                        <p class="card-text">Portfolio này đóng vai trò như một <strong>"Chứng chỉ số"</strong> minh chứng cho quá trình phát triển kỹ năng của bản thân thông qua môn học: <em>"Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo"</em>.</p>
+                        <ul class="styled-list">
+                            <li>Hệ thống hóa toàn bộ các bài tập thành phần từ bài 1 đến bài 6.</li>
+                            <li>Lưu trữ các sản phẩm số cá nhân để dễ dàng truy cập và chia sẻ nhanh chóng.</li>
+                            <li>Minh chứng trực quan năng lực áp dụng công nghệ số vào thực tiễn.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: TRANG DỰ ÁN (BÀI TẬP) -->
+            <section id="tab-projects" class="tab-panel">
+                <div class="section-header">
+                    <h2 class="section-title">Danh sách Bài tập & Dự án thành phần</h2>
+                    <p class="section-subtitle">Tập hợp 7 bài tập và báo cáo dự án thực hành xuất sắc trong học kỳ</p>
+                </div>
+
+                <!-- Tabs chọn bài tập -->
+                <div class="exercise-nav no-print">
+                    <button class="ex-nav-btn active" data-ex="ex1">Bài 1: Thao tác Tệp</button>
+                    <button class="ex-nav-btn" data-ex="ex2">Bài 2: Tìm kiếm</button>
+                    <button class="ex-nav-btn" data-ex="ex3">Bài 3: Prompt Engineering</button>
+                    <button class="ex-nav-btn" data-ex="ex4">Bài 4: Hợp tác trực tuyến</button>
+                    <button class="ex-nav-btn" data-ex="ex5">Bài 5: Sáng tạo với AI</button>
+                    <button class="ex-nav-btn" data-ex="ex6">Bài 6: AI trách nhiệm</button>
+                    <button class="ex-nav-btn" data-ex="ex7">Bài 7: Tổng quan tài liệu</button>
+                </div>
+
+                <!-- BÀI TẬP 1 -->
+                <div id="ex-ex1" class="ex-panel active-ex-panel">
+                    <div class="glass-card">
+                        <div class="ex-header">
+                            <span class="ex-badge">Bài tập 1 (Mục 1.4)</span>
+                            <h3 class="ex-title">Thao tác cơ bản với Tệp tin và Thư mục</h3>
+                            <a href="Bài tập dự án/Bài1.docx" class="download-btn no-print" download>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                                <span>Tải file gốc (.docx)</span>
+                            </a>
+                        </div>
+                        <div class="ex-meta">
+                            <div class="meta-item"><strong>Mục tiêu:</strong> Thành thạo các kỹ năng quản trị tệp tin và thư mục trên hệ điều hành Windows (quản lý đường dẫn, thực hiện tạo mới, sao chép, di chuyển, đổi tên, xóa tạm thời và xóa vĩnh viễn tệp tin).</div>
+                            <div class="meta-item"><strong>Nội dung thực hành:</strong> Khởi tạo thư mục gốc <code>ThucHanh_LyGiaBao</code>, tạo tệp <code>GhiChu.txt</code>, đổi tên thành <code>GhiChuQuanTrong.txt</code>, thực hành sao chép và di chuyển tệp vào thư mục con <code>TaiLieu</code>, thực hiện xóa tạm thời và khôi phục từ Recycle Bin, cũng như xóa vĩnh viễn tệp bằng tổ hợp <code>Shift + Delete</code>.</div>
+                        </div>
+
+                        <!-- Cây thư mục tương tác -->
+                        <h4 class="sub-title">Mô phỏng cây thư mục sau khi hoàn thành thực hành (Click để đóng/mở thư mục)</h4>
+                        <div class="folder-tree-box">
+                            <div class="tree-node root">
+                                <span class="tree-toggle">▼</span>
+                                <span class="folder-icon">📂</span>
+                                <span class="node-name">ThucHanh_LyGiaBao</span>
+                                <div class="tree-children">
+                                    <div class="tree-node">
+                                        <span class="tree-toggle">▼</span>
+                                        <span class="folder-icon">📂</span>
+                                        <span class="node-name">TaiLieu</span>
+                                        <div class="tree-children">
+                                            <div class="tree-node leaf">
+                                                <span class="file-icon">📄</span>
+                                                <span class="node-name">GhiChuQuanTrong.txt (Bản khôi phục)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tree-node leaf">
+                                        <span class="file-icon">📄</span>
+                                        <span class="node-name">GhiChuQuanTrong.txt (Bản gốc)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ex-footer">
+                            <span class="badge-success">✓ Đã kiểm chứng thao tác</span>
+                            <span class="badge-info">Môi trường: Windows Explorer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BÀI TẬP 2 -->
+                <div id="ex-ex2" class="ex-panel">
+                    <div class="glass-card">
+                        <div class="ex-header">
+                            <span class="ex-badge">Bài tập 2 (Mục 2.4)</span>
+                            <h3 class="ex-title">Tìm kiếm và đánh giá thông tin học thuật</h3>
+                            <a href="Bài tập dự án/Bài2.docx" class="download-btn no-print" download>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                                <span>Tải file gốc (.docx)</span>
+                            </a>
+                        </div>
+                        <div class="ex-meta">
+                            <div class="meta-item"><strong>Chủ đề nghiên cứu:</strong> So sánh kiến trúc điều phối tiến trình (Process Scheduling) và quản lý bộ nhớ giữa nhân Linux (Monolithic) và Windows NT (Hybrid).</div>
+                            <div class="meta-item"><strong>Chiến lược Boolean Search:</strong> <code>("Process Scheduling" OR "Memory Management") AND ("Linux Kernel" OR "Windows NT")</code> tìm kiếm trên Google Scholar, IEEE Xplore, ACM Digital Library và sách chuyên khảo.</div>
+                        </div>
+
+                        <h4 class="sub-title">Bảng tổng hợp & Đánh giá độ tin cậy tài liệu theo tiêu chí CRAAP</h4>
+                        <div class="table-responsive">
+                            <table class="custom-table" style="font-size: 0.85rem;">
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Tên tài liệu & Tác giả (Năm)</th>
+                                        <th>Loại nguồn</th>
+                                        <th>Phân tích độ tin cậy (CRAAP)</th>
+                                        <th>Xếp hạng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><strong>Deadline scheduling in the Linux kernel</strong><br>Lelli, J. et al. (2016)</td>
+                                        <td>Bài báo khoa học (Journal)</td>
+                                        <td>Tác giả thuộc Linux Foundation. Đăng trên tạp chí uy tín Software: Practice and Experience. Phương pháp benchmark thực nghiệm rõ ràng.</td>
+                                        <td><span class="score-high">Xuất sắc (5/5)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><strong>The design and implementation of the completely fair scheduler</strong><br>Bouron, J. et al. (2018)</td>
+                                        <td>Bài báo khoa học (Conference)</td>
+                                        <td>Nhóm nghiên cứu từ đại học lớn. Đăng kỷ yếu ACM (Top-tier). Phân tích mã nguồn và kiểm chứng toán học chi tiết.</td>
+                                        <td><span class="score-high">Xuất sắc (5/5)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><strong>Operating system concepts</strong><br>Silberschatz, A., Galvin, P.B. & Gagne, G. (2018)</td>
+                                        <td>Sách chuyên khảo</td>
+                                        <td>Giáo trình chuẩn quốc tế, các giáo sư đầu ngành biên soạn. Tái bản lần thứ 10, cập nhật lý thuyết hệ thống hóa cao.</td>
+                                        <td><span class="score-high">Xuất sắc (5/5)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><strong>Windows internals</strong><br>Russinovich, M.E. et al. (2012)</td>
+                                        <td>Sách chuyên khảo</td>
+                                        <td>CTO Microsoft Azure đồng tác giả. Microsoft Press xuất bản. Giải thích chuyên sâu về nhân Windows NT qua dịch ngược mã nguồn.</td>
+                                        <td><span class="score-high">Xuất sắc (5/5)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td><strong>Windows Kernel-Mode Process and Thread Manager</strong><br>Microsoft (2023)</td>
+                                        <td>Tài liệu kỹ thuật chính thức</td>
+                                        <td>Tài liệu đặc tả từ hãng Microsoft Learn. Được cập nhật liên tục theo các bản patch mới nhất.</td>
+                                        <td><span class="score-high">Tốt (4/5)</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="ex-footer">
+                            <span class="badge-success">✓ 10 Nguồn tài liệu học thuật</span>
+                            <span class="badge-info">Trích dẫn: Chuẩn Harvard</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BÀI TẬP 3 -->
+                <div id="ex-ex3" class="ex-panel">
+                    <div class="glass-card">
+                        <div class="ex-header">
+                            <span class="ex-badge">Bài tập 3 (Mục 3.4)</span>
+                            <h3 class="ex-title">Kỹ năng viết Prompt Engineering</h3>
+                            <a href="Bài tập dự án/Bài3.docx" class="download-btn no-print" download>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                                <span>Tải file gốc (.docx)</span>
+                            </a>
+                        </div>
+                        <div class="ex-meta">
+                            <div class="meta-item"><strong>Mục tiêu:</strong> Thiết kế, thử nghiệm và so sánh các cấp độ Prompt (Cơ bản, Cải tiến, Nâng cao) để phục vụ 3 tác vụ học tập: Tóm tắt tài liệu học thuật, Giải thích Git Merge vs Git Rebase, và Thiết kế bộ đề ôn tập lập trình hướng đối tượng (OOP).</div>
+                            <div class="meta-item"><strong>Phương pháp:</strong> Áp dụng khung <strong>CREATE</strong> (Context, Role, Explicit, Action, Tone, Evaluation), kỹ thuật phân rã tư duy (Chain-of-thought) và chỉ định vai trò (Persona Prompting).</div>
+                        </div>
+
+                        <div class="grid grid-2">
+                            <!-- Prompt Git Merge vs Rebase -->
+                            <div class="prompt-box prompt-bad">
+                                <div class="prompt-header">
+                                    <span class="prompt-icon">❌</span>
+                                    <span>Prompt Cơ bản</span>
+                                </div>
+                                <div class="prompt-content">
+                                    "Giải thích sự khác nhau giữa Git merge và Git rebase."
+                                </div>
+                                <div class="prompt-result">
+                                    <strong>Đầu ra từ AI:</strong> Trả về các định nghĩa kỹ thuật chung chung (fast-forward, HEAD, rewriting commit history) rất khó hiểu cho người mới học.
+                                </div>
+                            </div>
+
+                            <div class="prompt-box prompt-good">
+                                <div class="prompt-header">
+                                    <span class="prompt-icon">✨</span>
+                                    <span>Prompt Nâng cao (CREATE + Analogy + CoT)</span>
+                                </div>
+                                <div class="prompt-content">
+                                    "Bạn đóng vai trò là Senior Developer đang hướng dẫn một thực tập sinh mới.<br>
+                                    - Bước 1: Giải thích sự khác biệt giữa git merge và git rebase sử dụng phép ẩn dụ gần gũi (như ghép con đường hoặc viết chung một cuốn sách).<br>
+                                    - Bước 2: Đưa ra kịch bản thực tế bắt buộc phải dùng merge và kịch bản bắt buộc phải dùng rebase.<br>
+                                    - Bước 3: Cảnh báo 1 lỗi nghiêm trọng nhất hay gặp khi dùng rebase."
+                                </div>
+                                <div class="prompt-result">
+                                    <strong>Đầu ra từ AI:</strong> Giải thích trực quan sinh động bằng phép ẩn dụ, đưa ra kịch bản thực tế rõ ràng cho từng loại lệnh, và nhấn mạnh quy tắc sống còn: "Không bao giờ rebase trên nhánh công cộng (public branch)".
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="sub-title">Bài học kinh nghiệm rút ra từ viết Prompt</h4>
+                        <ul class="styled-list">
+                            <li>
+                                <strong>Tối ưu hóa Persona (Vai trò):</strong> Việc gán vai trò như "Giáo sư" hay "Senior Mentor" giúp AI điều chỉnh từ vựng học thuật, chuyên nghiệp và có tính sư phạm tốt hơn.
+                            </li>
+                            <li>
+                                <strong>Sử dụng ràng buộc phủ định:</strong> Ở tác vụ OOP, thêm ràng buộc "Không hỏi định nghĩa học vẹt, đưa ra code lỗi Java bắt sinh viên tìm lỗi thiết kế" đã ép AI sử dụng tư duy logic sâu thay vì chỉ truy xuất văn bản tĩnh có sẵn trên mạng.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- BÀI TẬP 4 -->
+                <div id="ex-ex4" class="ex-panel">
+                    <div class="glass-card">
+                        <div class="ex-header">
+                            <span class="ex-badge">Bài tập 4 (Mục 4.4)</span>
+                            <h3 class="ex-title">Sử dụng công cụ cộng tác trực tuyến cho dự án nhóm</h3>
+                            <a href="Bài tập dự án/Bài4.docx" class="download-btn no-print" download>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                                <span>Tải file gốc (.docx)</span>
+                            </a>
+                        </div>
+                        <div class="ex-meta">
+                            <div class="meta-item"><strong>Thông tin dự án:</strong> Xây dựng kịch bản & sản xuất Video "Khám phá AI và Công nghệ số trong Khoa học Máy tính" - Nhóm 8.</div>
+                            <div class="meta-item"><strong>Vai trò cá nhân:</strong> Nhóm trưởng kiêm Video Editor (chịu trách nhiệm phân phối công việc, quản lý tài nguyên và dựng sản phẩm cuối).</div>
+                        </div>
+
+                        <div class="grid grid-2">
+                            <!-- Kanban & Lưu trữ -->
+                            <div>
+                                <h4 class="sub-title">Quản lý tài nguyên và phân quyền đám mây (Google Drive)</h4>
+                                <div class="folder-tree-box" style="font-size: 0.85rem;">
+                                    <div class="tree-node root">
+                                        <span class="folder-icon">📂</span> <span class="node-name">Nhom8_KhamPhaAI</span>
+                                        <div class="tree-children">
+                                            <div class="tree-node">
+                                                <span class="folder-icon">📂</span> <span class="node-name">1_KichBan_TaiLieu</span> (Editor: Soạn kịch bản nhóm)
+                                            </div>
+                                            <div class="tree-node">
+                                                <span class="folder-icon">📂</span> <span class="node-name">2_Footage_AmThanh</span>
+                                                <div class="tree-children">
+                                                    <div class="tree-node leaf"><span class="file-icon">📄</span> Video_TuanAnh</div>
+                                                    <div class="tree-node leaf"><span class="file-icon">📄</span> HinhAnh_DucAnh</div>
+                                                </div>
+                                            </div>
+                                            <div class="tree-node leaf">
+                                                <span class="file-icon">🎬</span> <span class="node-name">3_VideoFinal</span> (Viewer: Toàn nhóm)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="card-text mt-2" style="font-size: 0.85rem;"><strong>Quy tắc đặt tên file:</strong> <code>[Ngày]_[TênPhânLoại]_[NgườiThựcHiện]</code>. Ví dụ: <code>20260420_VideoDraft1_LyGiaBao.mp4</code>.</p>
+                            </div>
+
+                            <!-- Thách thức & Giải pháp -->
+                            <div>
+                                <h4 class="sub-title">Vượt qua các thách thức lớn bằng giải pháp kỹ thuật</h4>
+                                <ul class="styled-list" style="font-size: 0.85rem; gap: 0.75rem;">
+                                    <li>
+                                        <strong>Xung đột kịch bản (Google Docs):</strong> Ép nhóm sử dụng chế độ <em>Suggesting (Đề xuất)</em> thay vì Editing trực tiếp để mọi thay đổi đều được nhóm trưởng duyệt trước khi lưu vào bản chính thức.
+                                    </li>
+                                    <li>
+                                        <strong>Video dung lượng lớn (Google Drive):</strong> Khắc phục giới hạn 15GB bằng cách lưu trữ trên Drive sinh viên (VNU email có dung lượng lớn hơn) và đóng gói dạng <code>.zip</code> sau khi hoàn thành.
+                                    </li>
+                                    <li>
+                                        <strong>Trôi tiến độ thẻ Kanban (Trello):</strong> Tích hợp bot thông báo tự động (Trello Power-Ups) liên kết trực tiếp vào kênh chat nhóm Zalo/Discord, tự động ping khi thẻ trễ hạn hoặc hoàn tất.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BÀI TẬP 5 -->
+                <div id="ex-ex5" class="ex-panel">
+                    <div class="glass-card">
+                        <div class="ex-header">
+                            <span class="ex-badge">Bài tập 5 (Mục 5.4)</span>
+                            <h3 class="ex-title">Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</h3>
+                            <a href="Bài tập dự án/Bài5.docx" class="download-btn no-print" download>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                                <span>Tải file gốc (.docx)</span>
+                            </a>
+                        </div>
+                        <div class="ex-meta">
+                            <div class="meta-item"><strong>Chủ đề dự án:</strong> Thiết kế bài viết và Infographic: "Bí kíp thiết lập eDPI và Tư thế cầm chuột (Mouse Grip) tối ưu cho game thủ FPS" ( Valorant & CS2).</div>
+                            <div class="meta-item"><strong>Mô hình AI tích hợp:</strong> Google Gemini (tạo text thô), DALL-E 3 (thiết kế ảnh cover và mô phỏng bàn tay cầm chuột), Canva AI (dàn trang và hiệu đắp văn bản).</div>
+                        </div>
+
+                        <div class="grid grid-2">
+                            <!-- Ảnh sản phẩm AI -->
+                            <div class="media-display">
+                                <img src="assets/ai-generated.png" alt="Ảnh do AI tạo sinh" class="ai-visual" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=80'">
+                                <div class="media-caption" style="font-size: 0.8rem;">
+                                    <strong>Hình ảnh DALL-E 3 tạo sinh góc Gaming</strong><br>
+                                    <em>Prompt: "A sleek, cinematic flat design illustration of a high-end E-sports gaming setup... Neon cyan and dark blue color scheme."</em>
+                                </div>
+                            </div>
+
+                            <!-- Văn bản hỗ trợ từ AI và Tích hợp -->
+                            <div class="ai-writing">
+                                <h5 class="writing-title">Nhật ký Tích hợp & Sáng tạo của Con người (Đóng góp cá nhân 60%)</h5>
+                                <div class="writing-body" style="font-size: 0.8rem;">
+                                    <p><strong>1. Biên tập nội dung (Gemini):</strong> Gemini cung cấp công thức và ưu nhược điểm lý thuyết của 3 tư thế (Palm, Claw, Fingertip). Tôi chỉnh sửa lại văn phong lý thuyết khô khan thành ngôn ngữ game thủ FPS, thêm chỉ số DPI tiêu chuẩn (800 DPI, in-game sens 0.27 - 0.428) từ kinh nghiệm cá nhân.</p>
+                                    <p><strong>2. Xử lý đồ họa (DALL-E 3):</strong> Ảnh vẽ bàn tay cầm chuột (Claw Grip) từ DALL-E rất đẹp nhưng thiếu tính chỉ dẫn đồ họa kỹ thuật. Tôi dùng Canva chèn thêm các lớp (layers) thông tin: đánh dấu các điểm tiếp xúc lực của ngón tay, vẽ ký hiệu góc co ngón tay để biến nó thành ảnh giáo khoa hữu dụng.</p>
+                                    <p><strong>3. Hoàn thiện Infographic (Canva):</strong> Tự tay căn chỉnh lưới (grid layout), chọn font chữ công nghệ sans-serif hiện đại, phối màu tương phản tốt để tạo ra một infographic chuẩn mực.</p>
+                                </div>
+                                <div class="writing-footer">
+                                    <span>Tương quan đóng góp: AI hỗ trợ nguyên liệu thô (40%) - Con người làm chủ sản phẩm (60%)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BÀI TẬP 6 -->
+                <div id="ex-ex6" class="ex-panel">
+                    <div class="glass-card">
+                        <div class="ex-header">
+                            <span class="ex-badge">Bài tập 6 (Mục 6.4)</span>
+                            <h3 class="ex-title">Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</h3>
+                            <a href="Bài tập dự án/Bài6.pdf" class="download-btn no-print" download>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                                <span>Tải file gốc (.pdf)</span>
+                            </a>
+                        </div>
+                        <div class="ex-meta">
+                            <div class="meta-item"><strong>Mục tiêu:</strong> Khảo sát quy định sử dụng AI tại các trường Đại học lớn (ĐHQGHN, UET, RMIT) và thực hành liêm chính học thuật khi làm việc với AI thông qua một tình huống kỹ thuật cụ thể.</div>
+                            <div class="meta-item"><strong>Tình huống kỹ thuật:</strong> Thiết kế lớp kết nối Database bằng Java (Dự án Vạn Bảo Các). Gemini ban đầu cung cấp Singleton pattern thông thường (không an toàn đa luồng). Tôi đã phản biện (Critical Thinking) để nhận ra Race Condition và ép AI viết lại dùng Double-Checked Locking.</div>
+                        </div>
+
+                        <div class="grid grid-2">
+                            <!-- Khảo sát quy chế -->
+                            <div>
+                                <h4 class="sub-title">Khảo sát chính sách sử dụng AI học thuật</h4>
+                                <ul class="styled-list" style="font-size: 0.85rem; gap: 0.75rem;">
+                                    <li>
+                                        <strong>ĐHQGHN & UET:</strong> Chưa cấm hoàn toàn AI nhưng nguyên tắc cốt lõi là sinh viên phải là tác giả thực sự của sản phẩm nộp. Sao chép 100% code/báo cáo từ AI bị coi là đạo văn nghiêm trọng.
+                                    </li>
+                                    <li>
+                                        <strong>Đại học RMIT Việt Nam:</strong> Áp dụng hệ thống phân loại "Đèn giao thông" (Traffic Light System) rất rõ ràng:
+                                        <br>🟢 <em>Vùng Xanh:</em> Tự do dùng AI tìm ý tưởng, sửa ngữ pháp.
+                                        <br>🟡 <em>Vùng Vàng:</em> Được dùng nhưng bắt buộc phải trích dẫn rõ prompt và AI sử dụng.
+                                        <br>🔴 <em>Vùng Đỏ:</em> Cấm hoàn toàn AI trong các bài thi đánh giá năng lực độc lập.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Bộ 5 nguyên tắc -->
+                            <div>
+                                <h4 class="sub-title">Bộ 5 Nguyên tắc vàng sử dụng AI của Lý Gia Bảo</h4>
+                                <div class="grid grid-2" style="gap: 0.75rem; font-size: 0.8rem;">
+                                    <div style="background: rgba(157, 78, 221, 0.05); padding: 0.75rem; border-radius: 8px;">
+                                        <strong>1. Zero-Blind-Copy:</strong> Không bao giờ chép code hay nội dung AI vào bài làm nếu bản thân chưa hiểu cặn kẽ 100% dòng lệnh hoạt động thế nào.
+                                    </div>
+                                    <div style="background: rgba(157, 78, 221, 0.05); padding: 0.75rem; border-radius: 8px;">
+                                        <strong>2. AI là "Vịt cao su":</strong> Sử dụng AI làm Rubber Duck Debugging (hỏi giải thích lỗi, phản biện giải pháp) chứ không nhờ viết hộ.
+                                    </div>
+                                    <div style="background: rgba(157, 78, 221, 0.05); padding: 0.75rem; border-radius: 8px;">
+                                        <strong>3. Minh bạch tuyệt đối:</strong> Khai báo rõ công cụ và prompt sử dụng nếu đóng góp của AI vượt quá 30% nội dung.
+                                    </div>
+                                    <div style="background: rgba(157, 78, 221, 0.05); padding: 0.75rem; border-radius: 8px;">
+                                        <strong>4. Bảo vệ dữ liệu nhạy cảm:</strong> Tuyệt đối không tải các khóa bảo mật (API Key, Token) hay thông tin mật lên cửa sổ chat AI.
+                                    </div>
+                                    <div style="background: rgba(157, 78, 221, 0.05); padding: 0.75rem; border-radius: 8px; grid-column: span 2;">
+                                        <strong>5. Giữ vững cốt lõi (Core-First):</strong> Đối với các thuật toán cốt lõi, tự suy nghĩ vẽ mã giả (pseudocode) trước, chỉ dùng AI ở bước tối ưu hóa hoặc refactor.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BÀI TẬP 7 -->
+                <div id="ex-ex7" class="ex-panel">
+                    <div class="glass-card">
+                        <div class="ex-header">
+                            <span class="ex-badge">Bài tập 7 (Mục 7.4)</span>
+                            <h3 class="ex-title">Báo cáo Tổng quan tài liệu khoa học bằng AI</h3>
+                            <a href="Bài tập dự án/Bài7.pdf" class="download-btn no-print" download>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                                <span>Tải file gốc (.pdf)</span>
+                            </a>
+                        </div>
+                        <div class="ex-meta">
+                            <div class="meta-item"><strong>Chủ đề nghiên cứu:</strong> Ứng dụng các mô hình Deep Learning trong việc phát hiện hành vi gian lận đẩy giá (Shill Bidding) trên các nền tảng đấu giá trực tuyến.</div>
+                            <div class="meta-item"><strong>Công cụ AI hỗ trợ:</strong> Consensus (Bộ máy tìm kiếm học thuật tối ưu hóa bằng AI, giúp trích xuất các bài báo khoa học đã qua bình duyệt).</div>
+                        </div>
+
+                        <h4 class="sub-title">Bảng so sánh kết quả trích xuất khoa học từ 6 bài báo lớn</h4>
+                        <div class="table-responsive">
+                            <table class="custom-table" style="font-size: 0.8rem;">
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Tên bài báo & Năm</th>
+                                        <th>Phương pháp / Mô hình AI</th>
+                                        <th>Tập dữ liệu & Số lượng mẫu</th>
+                                        <th>Kết quả chính (Hiệu suất)</th>
+                                        <th>Hạn chế / Điểm yếu</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><strong>Detecting Shill Bidding in Online Auctions...</strong> (2020)</td>
+                                        <td>SVM, Random Forest, Decision Tree</td>
+                                        <td>10,485 phiên đấu giá từ eBay</td>
+                                        <td>Random Forest đạt độ chính xác cao nhất (96.5%) trong các mô hình học máy truyền thống.</td>
+                                        <td>Khó bắt được các mẫu gian lận tinh vi có tính chuỗi thời gian.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><strong>Deep Learning for Anomaly Detection...</strong> (2021)</td>
+                                        <td>Deep Neural Network (DNN)</td>
+                                        <td>Dữ liệu mô phỏng + 5,000 phiên thực tế</td>
+                                        <td>DNN vượt trội hơn SVM 8% về chỉ số Recall trong việc nhận diện tài khoản giả.</td>
+                                        <td>Đòi hỏi tài nguyên phần cứng lớn, thời gian huấn luyện lâu.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><strong>Sequential Bid Analysis with Recurrent...</strong> (2022)</td>
+                                        <td>RNN, LSTM</td>
+                                        <td>Dữ liệu lịch sử Yahoo (12,000 mẫu)</td>
+                                        <td>LSTM xử lý tốt chuỗi bước giá liên tiếp, đạt F1-Score 97.2%.</td>
+                                        <td>Dễ bị over-fitting nếu dữ liệu huấn luyện không đủ đa dạng.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><strong>Ensemble Learning Techniques for Robust...</strong> (2022)</td>
+                                        <td>Gradient Boosting, XGBoost</td>
+                                        <td>eBay & Đấu giá nghệ thuật (15,000 mẫu)</td>
+                                        <td>XGBoost cho tốc độ suy luận nhanh nhất, phù hợp cho real-time (độ chính xác 95.8%).</td>
+                                        <td>Cần kỹ thuật trích xuất đặc trưng (feature engineering) thủ công rất phức tạp.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td><strong>Graph Neural Networks for Collusion...</strong> (2023)</td>
+                                        <td>Graph Neural Networks (GNN)</td>
+                                        <td>Mạng lưới 20,000 tài khoản người dùng</td>
+                                        <td>GNN phát hiện thành công nhóm tài khoản liên kết chéo thổi giá (accuracy 98.1%).</td>
+                                        <td>Cấu trúc đồ thị phức tạp, khó triển khai trên các hệ thống cũ.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td><strong>Real-time Fraud Detection System using...</strong> (2024)</td>
+                                        <td>Bi-directional Transformers</td>
+                                        <td>50,000 luồng dữ liệu đấu giá trực tiếp</td>
+                                        <td>Phân tích ngữ cảnh toàn cục của phiên đấu giá trong chưa đầy 0.1s, đạt F1-Score 98.5%.</td>
+                                        <td>Yêu cầu hạ tầng máy chủ mạnh để chạy mô hình suy luận trực tiếp.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h4 class="sub-title">Nhận xét kết quả tổng hợp</h4>
+                        <p class="card-text" style="font-size: 0.85rem;">
+                            <strong>1. Sự dịch chuyển về công nghệ:</strong> Đang có xu hướng dịch chuyển rõ rệt từ các mô hình Machine Learning truyền thống (như SVM, Random Forest) sang các kiến trúc Deep Learning phức tạp hơn như LSTM, GNN, Transformer.<br>
+                            <strong>2. Đặc thù dữ liệu:</strong> Việc phát hiện gian lận đấu giá không chỉ dựa vào các con số rời rạc mà đòi hỏi phân tích dữ liệu dạng chuỗi (bước giá liên tiếp) và dữ liệu đồ thị (mối quan hệ giữa các tài khoản thổi giá). Các mô hình như LSTM và GNN giải quyết bài toán này triệt để hơn.<br>
+                            <strong>3. Thách thức thực tiễn:</strong> Dù mô hình Deep Learning đem lại F1-Score >98%, rào cản lớn nhất khi tích hợp thực tế là chi phí tính toán và độ trễ (Latency). Hệ thống đấu giá trực tiếp yêu cầu độ trễ dưới 50ms, do đó tối ưu hóa tốc độ suy luận là bài toán kỹ thuật trọng tâm.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- SECTION 3: TRANG TỔNG KẾT -->
+            <section id="tab-summary" class="tab-panel">
+                <div class="glass-card fade-in-up">
+                    <h2 class="section-title">Tổng kết & Suy ngẫm về dự án</h2>
+                    <p class="section-subtitle">Hành trình học tập và tích lũy kỹ năng số</p>
+                    
+                    <div class="summary-content">
+                        <div class="quote-block">
+                            "Công nghệ số không thay thế con người, nhưng người biết sử dụng công nghệ số và AI sẽ thay thế những người không biết."
+                        </div>
+
+                        <div class="grid grid-3 mt-4">
+                            <div class="summary-metric">
+                                <span class="metric-number">07</span>
+                                <span class="metric-label">Kỹ năng cốt lõi đã hoàn thành</span>
+                            </div>
+                            <div class="summary-metric">
+                                <span class="metric-number">100%</span>
+                                <span class="metric-label">Tự chủ & Liêm chính học thuật</span>
+                            </div>
+                            <div class="summary-metric">
+                                <span class="metric-number">A+</span>
+                                <span class="metric-label">Mục tiêu điểm số hướng tới</span>
+                            </div>
+                        </div>
+
+                        <h4 class="sub-title mt-4">1. Trải nghiệm lớn nhất thu nhận được</h4>
+                        <p>Qua việc hoàn thành chuỗi bài tập thực hành, tôi đã có cơ hội hệ thống lại một cách khoa học toàn bộ kỹ năng số của mình. Không chỉ dừng lại ở các thao tác cơ bản như quản lý tệp hay tìm kiếm nâng cao, tôi đã thực sự hiểu cách vận hành các mô hình AI tạo sinh để làm trợ lý đắc lực cho việc nghiên cứu và học tập một cách có đạo đức.</p>
+
+                        <h4 class="sub-title">2. Khó khăn đã vượt qua</h4>
+                        <p>Thời gian đầu, việc viết Prompt cho AI thường cho ra các kết quả chung chung và không hữu ích. Sau khi nghiên cứu sâu bài tập 3 và áp dụng các mô hình cấu trúc lệnh chuẩn hóa, tôi đã biết cách cung cấp vai trò, bối cảnh và tiêu chí đánh giá cụ thể giúp nâng cao vượt trội chất lượng phản hồi từ AI.</p>
+
+                        <h4 class="sub-title">3. Hướng phát triển trong tương lai</h4>
+                        <p>Tôi sẽ tiếp tục áp dụng bộ nguyên tắc cộng tác nhóm và sử dụng AI có trách nhiệm này vào tất cả các môn chuyên ngành sắp tới. Mục tiêu tiếp theo là tự động hóa các quy trình nghiên cứu học tập bằng cách kết hợp nhiều tác vụ AI phức tạp hơn.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Floating Action Button for PDF Print (no-print class to hide during printing) -->
+    <button id="print-pdf-btn" class="print-btn no-print" title="Tải PDF hoặc In Portfolio">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14" rx="1"/></svg>
+        <span>Xuất báo cáo PDF</span>
+    </button>
+
+    <!-- App JS -->
+    <script src="app.js"></script>
+</body>
+</html>

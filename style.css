@@ -1443,3 +1443,51 @@ body {
     color: #fff !important;
 }
 
+/* ==========================================================================
+   ACTION BUTTONS CONTAINER & VIEW BUTTON STYLES
+   ========================================================================== */
+.ex-actions {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    text-decoration: none;
+    transition: all var(--transition-speed);
+    cursor: pointer;
+    align-self: center;
+}
+.view-btn svg {
+    transition: transform var(--transition-speed);
+    flex-shrink: 0;
+}
+.view-btn:hover {
+    background: var(--accent-cyan);
+    color: #0b0714 !important;
+    box-shadow: 0 0 15px var(--accent-cyan-glow);
+}
+.view-btn:hover svg {
+    transform: scale(1.15);
+}
+[data-theme="light"] .view-btn {
+    background: rgba(0, 150, 199, 0.06);
+    border-color: rgba(0, 150, 199, 0.15);
+    color: var(--accent-cyan);
+}
+[data-theme="light"] .view-btn:hover {
+    background: var(--accent-cyan);
+    color: #fff !important;
+}
+

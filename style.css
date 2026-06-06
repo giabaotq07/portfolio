@@ -1173,234 +1173,7 @@ body {
     }
 }
 
-/* ==========================================================================
-   PRINT MEDIA STYLESHEET (PDF Optimization)
-   ========================================================================== */
-@media print {
-    /* Set page break parameters */
-    @page {
-        size: A4;
-        margin: 1.5cm;
-    }
-    
-    /* Global overrides to save ink and look professional */
-    body {
-        background: #ffffff !important;
-        color: #000000 !important;
-        font-size: 11pt !important;
-        line-height: 1.4 !important;
-    }
-    
-    .bg-glow {
-        display: none !important;
-    }
-    
-    /* Force container to block layout (no side-by-side) */
-    .container {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    .main-content {
-        margin-left: 0 !important;
-        padding: 0 !important;
-        max-width: 100% !important;
-    }
-
-    /* Hide unnecessary UI elements */
-    .no-print {
-        display: none !important;
-    }
-    
-    /* FORCE ALL TABS AND PANELS TO SHOW IN PRINT OUT */
-    .tab-panel {
-        display: block !important;
-        opacity: 1 !important;
-        page-break-after: always; /* Each major section on a new page */
-        break-after: page;
-        margin-bottom: 2rem !important;
-    }
-    
-    /* On print, show ALL exercises sequentially! */
-    #tab-projects {
-        display: block !important;
-    }
-    .ex-panel {
-        display: block !important;
-        opacity: 1 !important;
-        page-break-inside: avoid; /* Prevent exercises from split printing */
-        margin-bottom: 3.5rem !important;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 2rem;
-    }
-    .ex-panel:last-child {
-        border-bottom: none;
-    }
-    
-    /* Style modifications for white background printing */
-    .glass-card, .hero-card {
-        background: #ffffff !important;
-        border: 1px solid #cccccc !important;
-        box-shadow: none !important;
-        padding: 1.5rem !important;
-        color: #000000 !important;
-        border-radius: 8px !important;
-        page-break-inside: avoid;
-    }
-    
-    .hero-layout {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        gap: 2rem !important;
-    }
-    
-    .hero-avatar {
-        width: 120px !important;
-        height: 120px !important;
-        border: 2px solid #000000 !important;
-        box-shadow: none !important;
-    }
-    .avatar-glow {
-        display: none !important;
-    }
-    
-    .hero-name {
-        font-size: 2.2rem !important;
-        background: none !important;
-        -webkit-text-fill-color: initial !important;
-        color: #000000 !important;
-    }
-    .hero-bio {
-        color: #333333 !important;
-        font-size: 10pt !important;
-    }
-    
-    /* Grids to double column on print */
-    .grid {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 1.5rem !important;
-    }
-    
-    /* Lists */
-    .styled-list li {
-        color: #222222 !important;
-    }
-    .styled-list li::before {
-        color: #000000 !important;
-    }
-
-    /* Subtitles and headers */
-    .sub-title {
-        border-left-color: #000000 !important;
-        color: #000000 !important;
-        margin-top: 1rem !important;
-    }
-    
-    /* Folder Tree print styling */
-    .folder-tree-box {
-        background: #fafafa !important;
-        border: 1px solid #cccccc !important;
-        color: #000000 !important;
-        overflow: visible !important;
-        max-height: none !important;
-    }
-    .tree-children.collapsed {
-        display: block !important; /* Always show everything on print */
-    }
-    .tree-toggle {
-        display: none !important;
-    }
-    
-    /* Table printing */
-    .custom-table {
-        color: #000000 !important;
-        border: 1px solid #cccccc !important;
-    }
-    .custom-table th {
-        background: #f0f0f0 !important;
-        color: #000000 !important;
-        border-bottom: 2px solid #999999 !important;
-    }
-    .custom-table td {
-        border-bottom: 1px solid #cccccc !important;
-    }
-    .score-high, .score-medium {
-        color: #000000 !important;
-        font-weight: bold !important;
-        text-decoration: underline;
-    }
-    
-    /* Prompt comparisons print */
-    .prompt-box {
-        background: #fafafa !important;
-        border: 1px solid #999999 !important;
-        color: #000000 !important;
-    }
-    .prompt-bad {
-        border-color: #ff3333 !important;
-    }
-    .prompt-good {
-        border-color: #00aa00 !important;
-    }
-    .prompt-content {
-        background: #ffffff !important;
-        border: 1px solid #cccccc !important;
-        color: #000000 !important;
-    }
-    
-    /* Kanban Board printing - lay out columns horizontally */
-    .kanban-board {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr 1fr !important;
-        gap: 1rem !important;
-        page-break-inside: avoid;
-    }
-    .kanban-column {
-        background: #ffffff !important;
-        border: 1px solid #999999 !important;
-        padding: 0.5rem !important;
-    }
-    .column-header {
-        border-bottom-color: #666666 !important;
-        color: #000000 !important;
-    }
-    .kanban-card {
-        background: #ffffff !important;
-        border: 1px solid #cccccc !important;
-        box-shadow: none !important;
-    }
-    .card-tag {
-        border: 1px solid #999999 !important;
-        background: #ffffff !important;
-        color: #000000 !important;
-    }
-
-    /* AI Gallery printing */
-    .ai-visual {
-        max-height: 200px !important;
-        border-bottom: 1px solid #cccccc !important;
-    }
-    .ai-writing {
-        border-color: #666666 !important;
-        background: #ffffff !important;
-    }
-    
-    /* Metrics block in summary */
-    .summary-metric {
-        background: #ffffff !important;
-        border: 1px solid #cccccc !important;
-    }
-    .metric-number {
-        background: none !important;
-        -webkit-text-fill-color: initial !important;
-        color: #000000 !important;
-    }
-}
+/* Duplicate print styles removed - merged into the unified print section at the bottom of the file */
 
 /* ==========================================================================
    DOWNLOAD BUTTONS STYLES
@@ -1631,65 +1404,350 @@ body {
 
 /* Print Stylesheet Overrides */
 @media print {
-    .no-print, 
-    #theme-toggle, 
-    #print-btn, 
-    .exercise-nav, 
-    .ex-actions,
-    .bg-glow,
-    .avatar-glow {
-        display: none !important;
+    /* Set page break parameters */
+    @page {
+        size: A4;
+        margin: 1.5cm;
     }
+    
+    /* Enable background printing and colors */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Global overrides to save ink and look professional */
     body {
         background: #ffffff !important;
-        color: #000000 !important;
-        font-size: 12pt;
+        color: #1d172e !important;
+        font-size: 11pt !important;
+        line-height: 1.5 !important;
+        font-family: var(--font-body) !important;
     }
+    
+    .bg-glow, .avatar-glow {
+        display: none !important;
+    }
+    
+    /* Force container to block layout (no side-by-side) */
     .container {
         display: block !important;
+        width: 100% !important;
         max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
+    
     .sidebar {
         display: none !important;
     }
+    
     .main-content {
         margin-left: 0 !important;
         padding: 0 !important;
         max-width: 100% !important;
     }
-    .glass-card, .hero-card {
-        background: transparent !important;
-        border: 1px solid #ccc !important;
-        box-shadow: none !important;
-        padding: 1.5rem !important;
-        margin-bottom: 2rem !important;
-        page-break-inside: avoid;
+
+    /* Hide unnecessary UI elements */
+    .no-print, 
+    #theme-toggle, 
+    #print-btn, 
+    .exercise-nav, 
+    .ex-actions,
+    .mobile-header {
+        display: none !important;
     }
+    
+    /* FORCE ALL TABS AND PANELS TO SHOW IN PRINT OUT */
+    .tab-panel {
+        display: block !important;
+        opacity: 1 !important;
+        page-break-after: always !important; /* Each major section on a new page */
+        break-after: page !important;
+        margin-bottom: 3rem !important;
+    }
+    
+    /* On print, show ALL exercises sequentially! */
+    #tab-projects {
+        display: block !important;
+    }
+    .ex-panel {
+        display: block !important;
+        opacity: 1 !important;
+        page-break-inside: avoid !important; /* Prevent exercises from split printing */
+        break-inside: avoid !important;
+        margin-bottom: 3.5rem !important;
+        border-bottom: 1.5px solid #eaeaea !important;
+        padding-bottom: 2.5rem !important;
+    }
+    .ex-panel:last-child {
+        border-bottom: none !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    /* Style modifications for white background printing */
+    .glass-card, .hero-card {
+        background: #fdfdfd !important;
+        border: 1px solid #e2dfed !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+        padding: 1.75rem !important;
+        color: #1d172e !important;
+        border-radius: 12px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .hero-layout {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 2.5rem !important;
+    }
+    
+    .hero-avatar {
+        width: 130px !important;
+        height: 130px !important;
+        border: 3px solid #7209b7 !important;
+        box-shadow: none !important;
+    }
+    
     .hero-name {
+        font-size: 2.4rem !important;
         background: none !important;
         -webkit-text-fill-color: initial !important;
-        color: #000000 !important;
+        color: #1d172e !important;
+        font-weight: 800 !important;
+        margin-bottom: 0.5rem !important;
     }
+    
+    .hero-sub {
+        color: #7209b7 !important;
+        font-weight: 600 !important;
+    }
+    
+    .hero-bio {
+        color: #5e5770 !important;
+        font-size: 10pt !important;
+        line-height: 1.6 !important;
+    }
+    
     .tag {
-        border: 1px solid #666 !important;
-        color: #000000 !important;
-        background: transparent !important;
+        border: 1px solid #e2dfed !important;
+        color: #7209b7 !important;
+        background: #f7f5fc !important;
+        font-weight: 500 !important;
+        padding: 0.25rem 0.6rem !important;
+        border-radius: 6px !important;
     }
-    .folder-tree-box, .code-box, .prompt-content {
-        background: #f5f5f5 !important;
-        color: #000000 !important;
-        border: 1px solid #ccc !important;
+    
+    /* Grids to double column on print */
+    .grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* Lists */
+    .styled-list li {
+        color: #4a4357 !important;
+        font-size: 9.5pt !important;
+    }
+    .styled-list li::before {
+        color: #7209b7 !important;
+    }
+    
+    .styled-list li strong {
+        color: #1d172e !important;
+    }
+
+    /* Subtitles and headers */
+    .sub-title {
+        border-left: 3px solid #7209b7 !important;
+        color: #1d172e !important;
+        margin-top: 1.5rem !important;
+        padding-left: 0.75rem !important;
+        font-weight: 600 !important;
+    }
+    
+    .section-title {
+        color: #1d172e !important;
+        font-weight: 700 !important;
+        background: none !important;
+        -webkit-text-fill-color: initial !important;
+    }
+    
+    .section-subtitle {
+        color: #5e5770 !important;
+    }
+    
+    /* Folder Tree print styling */
+    .folder-tree-box {
+        background: #f8f7fc !important;
+        border: 1px solid #e2dfed !important;
+        color: #1d172e !important;
+        overflow: visible !important;
+        max-height: none !important;
+        padding: 1.25rem !important;
+        border-radius: 8px !important;
+    }
+    .tree-children.collapsed {
+        display: block !important; /* Always show everything on print */
+    }
+    .tree-toggle {
+        display: none !important;
+    }
+    .node-name {
+        color: #1d172e !important;
+    }
+    
+    /* Table printing */
+    .custom-table {
+        color: #1d172e !important;
+        border: 1px solid #e2dfed !important;
+        border-collapse: collapse !important;
+        width: 100% !important;
     }
     .custom-table th {
-        background: #eaeaea !important;
-        color: #000000 !important;
+        background: #f1eff7 !important;
+        color: #1d172e !important;
+        border-bottom: 2px solid #d1cbdf !important;
+        font-weight: 600 !important;
     }
-    .custom-table td, .custom-table th {
-        border-bottom: 1px solid #ccc !important;
+    .custom-table td {
+        border-bottom: 1px solid #e2dfed !important;
+        color: #4a4357 !important;
     }
-    .prompt-good, .prompt-bad {
-        border: 1px solid #ccc !important;
-        background: transparent !important;
+    
+    /* Badge styling overrides in print for readability */
+    .ex-badge {
+        background: #eef2ff !important;
+        color: #4f46e5 !important;
+        border: 1px solid #c7d2fe !important;
+    }
+    
+    .badge-success {
+        background: #f0fdf4 !important;
+        color: #15803d !important;
+        border: 1px solid #bbf7d0 !important;
+    }
+    
+    .badge-info {
+        background: #fdf4ff !important;
+        color: #a21caf !important;
+        border: 1px solid #f5d0fe !important;
+    }
+    
+    .score-high {
+        background: #f0fdf4 !important;
+        color: #15803d !important;
+        border: 1px solid #bbf7d0 !important;
+        padding: 0.15rem 0.5rem !important;
+        border-radius: 4px !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+    }
+    
+    .score-medium {
+        background: #fffbeb !important;
+        color: #b45309 !important;
+        border: 1px solid #fef08a !important;
+        padding: 0.15rem 0.5rem !important;
+        border-radius: 4px !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+    }
+    
+    /* Prompt comparisons print */
+    .prompt-box {
+        background: #fbfbfe !important;
+        border: 1px solid #e2dfed !important;
+        color: #1d172e !important;
+        border-radius: 8px !important;
+        padding: 1.25rem !important;
+    }
+    .prompt-bad {
+        border-left: 4px solid #ef4444 !important;
+    }
+    .prompt-good {
+        border-left: 4px solid #10b981 !important;
+    }
+    .prompt-content {
+        background: #ffffff !important;
+        border: 1px solid #e2dfed !important;
+        color: #4a4357 !important;
+        padding: 0.75rem !important;
+        border-radius: 6px !important;
+    }
+    
+    /* Kanban Board printing - lay out columns horizontally */
+    .kanban-board {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 1.25rem !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    .kanban-column {
+        background: #f8f7fc !important;
+        border: 1px solid #e2dfed !important;
+        padding: 0.75rem !important;
+        border-radius: 8px !important;
+    }
+    .column-header {
+        border-bottom-color: #d1cbdf !important;
+        color: #1d172e !important;
+    }
+    .kanban-card {
+        background: #ffffff !important;
+        border: 1px solid #e2dfed !important;
+        box-shadow: none !important;
+        border-radius: 6px !important;
+    }
+    .card-tag {
+        border: 1px solid #c7d2fe !important;
+        background: #eef2ff !important;
+        color: #4f46e5 !important;
+    }
+    .assignee {
+        color: #5e5770 !important;
+    }
+
+    /* AI Gallery printing */
+    .ai-visual {
+        max-height: 220px !important;
+        border-bottom: 1px solid #e2dfed !important;
+    }
+    .ai-writing {
+        border: 1px dashed #7209b7 !important;
+        background: #ffffff !important;
+    }
+    .writing-title {
+        color: #7209b7 !important;
+    }
+    .writing-body {
+        color: #4a4357 !important;
+        max-height: none !important; /* Show entire text */
+        overflow: visible !important;
+    }
+    .writing-footer {
+        border-top: 1px solid #e2dfed !important;
+        color: #8c859f !important;
+    }
+    
+    /* Metrics block in summary */
+    .summary-metric {
+        background: #f8f7fc !important;
+        border: 1px solid #e2dfed !important;
+        border-radius: 10px !important;
+        padding: 1.25rem !important;
+    }
+    .metric-number {
+        background: none !important;
+        -webkit-text-fill-color: initial !important;
+        color: #7209b7 !important;
+        font-weight: 800 !important;
     }
 }
 

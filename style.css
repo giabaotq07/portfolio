@@ -1417,7 +1417,22 @@ body {
     }
     
     /* Global overrides to save ink and look professional */
-    body {
+    html, body, :root {
+        --bg-primary: #ffffff !important;
+        --bg-secondary: #f8f7fc !important;
+        --bg-card: #ffffff !important;
+        --border-color: rgba(29, 23, 46, 0.15) !important;
+        --border-color-hover: rgba(29, 23, 46, 0.3) !important;
+        --text-primary: #1d172e !important;
+        --text-secondary: #3b354a !important; /* Darkened for print contrast */
+        --text-muted: #5e5770 !important; /* Darkened for print contrast */
+        --accent-purple: #7209b7 !important;
+        --accent-cyan: #0077b6 !important; /* Darker blue/cyan for contrast on white paper */
+        --accent-purple-glow: rgba(114, 9, 183, 0.05) !important;
+        --accent-cyan-glow: rgba(0, 119, 182, 0.05) !important;
+        --card-glow-1: linear-gradient(135deg, rgba(114, 9, 183, 0.05), rgba(0, 119, 182, 0.02)) !important;
+        --card-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%) !important;
+        
         background: #ffffff !important;
         color: #1d172e !important;
         font-size: 11pt !important;
@@ -1466,6 +1481,11 @@ body {
         break-after: page !important;
         margin-bottom: 3rem !important;
     }
+    .tab-panel:last-of-type {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        margin-bottom: 0 !important;
+    }
     
     /* On print, show ALL exercises sequentially! */
     #tab-projects {
@@ -1474,8 +1494,8 @@ body {
     .ex-panel {
         display: block !important;
         opacity: 1 !important;
-        page-break-inside: avoid !important; /* Prevent exercises from split printing */
-        break-inside: avoid !important;
+        page-break-inside: auto !important; /* Allow logical page breaks inside panels */
+        break-inside: auto !important;
         margin-bottom: 3.5rem !important;
         border-bottom: 1.5px solid #eaeaea !important;
         padding-bottom: 2.5rem !important;
@@ -1494,9 +1514,47 @@ body {
         padding: 1.75rem !important;
         color: #1d172e !important;
         border-radius: 12px !important;
+        page-break-inside: auto !important; /* Allow breaks inside cards */
+        break-inside: auto !important;
+        margin-bottom: 2rem !important;
+        overflow: visible !important; /* CRITICAL: overflow: hidden prevents page breaking! */
+    }
+
+    /* Prevent page breaks inside smaller logical chunks */
+    .ex-header,
+    .ex-meta,
+    .folder-tree-box,
+    .custom-table,
+    .prompt-box,
+    .video-container,
+    .summary-metric,
+    .quote-block,
+    p, li,
+    .ex-footer {
         page-break-inside: avoid !important;
         break-inside: avoid !important;
-        margin-bottom: 2rem !important;
+    }
+    
+    /* Prevent orphan headings by avoiding page breaks directly after them */
+    h1, h2, h3, h4, h5, h6,
+    .ex-header,
+    .section-header {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+    }
+    
+    /* Prevent footers from being separated from their content */
+    .ex-footer {
+        page-break-before: avoid !important;
+        break-before: avoid !important;
+    }
+    
+    /* Force visibility and disable animations for printing */
+    .fade-in-up {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
     }
     
     .hero-layout {
@@ -1733,7 +1791,61 @@ body {
     }
     .writing-footer {
         border-top: 1px solid #e2dfed !important;
-        color: #8c859f !important;
+        color: #5e5770 !important; /* Darker gray for print contrast */
+    }
+    
+    /* Code box print overrides */
+    .code-box {
+        background: #f8f7fc !important;
+        border: 1px solid #e2dfed !important;
+        color: #1d172e !important;
+    }
+
+    /* Video player print optimization (ink-saving & high contrast) */
+    .video-container {
+        border: 1px solid #e2dfed !important;
+        background: #f8f7fc !important;
+        max-width: 100% !important;
+        height: auto !important;
+        aspect-ratio: auto !important;
+        padding: 1.5rem !important;
+    }
+    .video-media {
+        display: none !important;
+    }
+    .video-overlay {
+        position: relative !important;
+        background: transparent !important;
+        color: #7209b7 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 1.25rem !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        inset: auto !important;
+    }
+    .video-play-btn {
+        width: 45px !important;
+        height: 45px !important;
+        background: #7209b7 !important;
+        border-color: #7209b7 !important;
+        margin-left: 0 !important;
+        align-self: center !important;
+        box-shadow: none !important;
+    }
+    .video-play-btn svg {
+        fill: #ffffff !important;
+        stroke: #ffffff !important;
+    }
+    .video-overlay span {
+        color: #7209b7 !important;
+        text-shadow: none !important;
+        margin-top: 0 !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
     }
     
     /* Metrics block in summary */
